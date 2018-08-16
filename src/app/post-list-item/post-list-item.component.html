@@ -1,0 +1,13 @@
+<li [ngClass]=" {'list-group-item' : true,
+                 'list-group-item-success' : postLoveIts > 0,
+                 'list-group-item-danger' : postLoveIts < 0
+               }">
+    <div class="headerPost">
+        <h2>{{ postTitle }}</h2>
+        <span class="date">{{postCreatedAt | date :'dd/MM/yyyy \'à\' hh\'h\'mm\'min\'' }}</span>
+    </div>
+    <p>{{postContent}}</p>
+    <button class="btn btn-success" (click)="addLoveIts()">Love It !</button>
+    <button class="btn btn-danger" (click)="removeLoveIts()">Don't love It !</button>
+    <p>Le score des LoveIts est à : {{ postLoveIts }}</p>
+</li>
